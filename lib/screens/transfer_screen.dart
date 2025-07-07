@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class TransferScreen extends StatefulWidget {
   static const Color primaryTheme = Color.fromRGBO(237, 182, 2, 0.769);
 
-  const TransferScreen({super.key});
+  const TransferScreen({super.key}); // ✅ Must match const usage in main.dart
 
   @override
   State<TransferScreen> createState() => _TransferScreenState();
@@ -33,7 +33,6 @@ class _TransferScreenState extends State<TransferScreen> {
           child: ListView(
             padding: const EdgeInsets.all(16),
             children: [
-              // Amount Section
               const Text('Enter amount', style: TextStyle(fontSize: 14)),
               const SizedBox(height: 8),
               Container(
@@ -60,8 +59,6 @@ class _TransferScreenState extends State<TransferScreen> {
                 ),
               ),
               const SizedBox(height: 24),
-
-              // Account Selection
               const Text('SELECT ACCOUNT', style: TextStyle(fontSize: 14)),
               const SizedBox(height: 8),
               _buildSelectionCard(
@@ -70,8 +67,6 @@ class _TransferScreenState extends State<TransferScreen> {
                 onTap: () => _showAccountSelection(context),
               ),
               const SizedBox(height: 16),
-
-              // Network Selection
               const Text('Select network operator', style: TextStyle(fontSize: 14)),
               const SizedBox(height: 8),
               _buildSelectionCard(
@@ -80,26 +75,18 @@ class _TransferScreenState extends State<TransferScreen> {
                 onTap: () => _showNetworkSelection(context),
               ),
               const SizedBox(height: 16),
-
-              // Mobile Number
               const Text('Account', style: TextStyle(fontSize: 14)),
               const SizedBox(height: 8),
               _buildInputField('', (value) => mobileNumber = value),
               const SizedBox(height: 16),
-
-              // Beneficiary Name
               const Text('Beneficiary name', style: TextStyle(fontSize: 14)),
               const SizedBox(height: 8),
               _buildInputField('', (value) => beneficiaryName = value),
               const SizedBox(height: 16),
-
-              // Note
               const Text('Add a note or #hashtag', style: TextStyle(fontSize: 14)),
               const SizedBox(height: 8),
               _buildInputField('', (value) => note = value),
               const SizedBox(height: 32),
-
-              // Continue Button
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: TransferScreen.primaryTheme,
