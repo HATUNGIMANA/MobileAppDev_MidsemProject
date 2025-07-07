@@ -9,8 +9,6 @@ import 'screens/history_screen.dart';
 void main() => runApp(BankApp());
 
 class BankApp extends StatelessWidget {
-  const BankApp({super.key});
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -24,7 +22,7 @@ class BankApp extends StatelessWidget {
       routes: {
         '/': (context) => LoginScreen(),
         '/dashboard': (context) => DashboardScreen(),
-        '/transfer': (context) => TransferScreen(),
+        '/transfer': (context) => const TransferScreen(),
         '/bills': (context) => BillsScreen(),
         '/accounts': (context) => AccountsScreen(),
         '/history': (context) => HistoryScreen(),
